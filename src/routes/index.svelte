@@ -1,7 +1,8 @@
 <script>
-    let location="";
-    let weatherTemperature="";
-    let weatherDescription="";
+    let name="";
+    let planet="";
+    let height="";
+    
 
     async function getWeather() {
         fetch('https://goweather.herokuapp.com/weather/' + location)
@@ -13,25 +14,21 @@
     }
 
 </script>
-<div class="jumbotron">
-    <h1 class="display-3">Hello, world!</h1>
-    <p class="lead">This is a simple hero unit, a simple jumbotron-style component for
-                    calling extra attention to featured content or information.</p>
-    <hr class="my-2">
-    <p>It uses utility classes for typography and
-       spacing to space content out within the larger container.</p>
-    <p class="lead">
-      <a class="btn btn-primary btn-lg" href="#!" role="button">Some action</a>
-    </p>
-  </div>
-  
-<h1>Weather App</h1>
 
-<form on:submit|preventDefault={getWeather}>
-    <label for="location">Location:</label>
-    <input id="location" bind:value={location} type="text" />
-    <button type="submit">Check</button>
-</form>
+<div class="container-fluid bg-dark text-light p-5 text-center">
+   <h1>Star Wars 101</h1>
+</div>
 
-<p>Temperature: {weatherTemperature}</p>
-<p>Description: {weatherDescription}</p>
+<div class="container text-center mt-3">
+    <h2>Type in a character's name</h2>
+
+    <form on:submit|preventDefault={getWeather}>
+        <label for="location">Location:</label>
+        <input id="location" bind:value={location} type="text" />
+        <button type="submit">Check</button>
+    </form>
+    
+    <p>Temperature: {weatherTemperature}</p>
+    <p>Description: {weatherDescription}</p>
+</div>
+
